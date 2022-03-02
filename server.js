@@ -46,12 +46,12 @@ app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// use routes in controllers fouler 
+// use routes in controllers folder 
 app.use(require('./controllers'));
 
 
 
-// turn on connection to database and server
+// turns on connection to database and server
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log("I'm listening!"));
 });
