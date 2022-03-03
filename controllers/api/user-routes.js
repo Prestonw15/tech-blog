@@ -55,7 +55,7 @@ router.get('/:id', (req, res) => {
 
 // adds a user
 router.post('/', (req, res) => {
-    // expects {username: 'Jillium', email: 'holmesjillanne@gmail.com', 'password: 'password1234'}
+    // expects {username: 'Prestonw15', email: 'prestonwatson.15@gmail.com', 'password: 'password1234'}
     User.create({
         username: req.body.username,
         email: req.body.email,
@@ -72,7 +72,7 @@ router.post('/', (req, res) => {
     })
     .catch(err => {
         console.log(err);
-        res.status(500).json({ message: 'There has been an error' });
+        res.status(500).json({ message: 'An error occured' });
     });
 
 });
@@ -85,13 +85,13 @@ router.post('/login', (req, res) => {
       }
     }).then(dbUserData => {
       if (!dbUserData) {
-        res.status(400).json({ message: 'No user with that username' });
+        res.status(400).json({ message: 'No user with that Username' });
         return;
       }
   
       const validPassword = dbUserData.checkPassword(req.body.password);
       if (!validPassword) {
-        res.status(400).json({ message: 'Incorrect password!' });
+        res.status(400).json({ message: 'Incorrect Password!' });
         return;
       }
       req.session.save(() => {
@@ -117,7 +117,7 @@ router.put('/:id', (req, res) => {
     })
       .then(dbUserData => {
         if (!dbUserData[0]) {
-          res.status(404).json({ message: 'No user found with this id' });
+          res.status(404).json({ message: 'User with this ID not found' });
           return;
         }
         res.json(dbUserData);
@@ -136,14 +136,14 @@ router.delete('/:id', (req, res) => {
     })
     .then(dbUserData => {
         if (!dbUserData) {
-            res.status(404).json({ message: 'No user found with this id' });
+            res.status(404).json({ message: 'User with this ID not found' });
             return;
         }
-        res.json({ message: 'The user has been deleted!' });
+        res.json({ message: 'This user has now been deleted!' });
     })
     .catch(err => {
         console.log(err);
-        res.status(500).json({ message: 'There has been an error' });
+        res.status(500).json({ message: 'An error occured' });
     });
 });
 

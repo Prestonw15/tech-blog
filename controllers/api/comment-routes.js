@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
+const Auth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
     Comment.findAll()
@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/', withAuth, (req, res) => {
+router.post('/', Auth, (req, res) => {
     // check the session
     if (req.session) {
       Comment.create({
@@ -28,7 +28,7 @@ router.post('/', withAuth, (req, res) => {
     }
   });
 
-router.delete('/:id', withAuth, (req, res) => {
+router.delete('/:id', Auth, (req, res) => {
     Comment.destroy({
         where: {
             id: req.params.id
@@ -44,7 +44,7 @@ router.delete('/:id', withAuth, (req, res) => {
     })
     .catch(err => {
         console.log(err);
-        res.status(500).json({ message: 'There has been an error' });
+        res.status(500).json({ message: 'There is an error' });
     });
 });
 
