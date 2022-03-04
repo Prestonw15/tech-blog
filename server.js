@@ -22,7 +22,7 @@ if (process.env.JAWSDB_SC) {
     }
 } else sess = {
 
-    secret: process.env.SECRET,
+    secret: "lasjdflksdflkslsdf",
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -32,9 +32,6 @@ if (process.env.JAWSDB_SC) {
 };
 
 const hbs = exphbs.create({ helpers });
-
-
-
 
 // middleware for express 
 app.use(express.json());
