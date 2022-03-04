@@ -1,10 +1,8 @@
-// user router
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
 
 // gets all users
 router.get('/', (req, res) => {
-    //access the user model and run .findAll()
     User.findAll({
         attributes: { exclude: ['password'] } 
     })
@@ -15,7 +13,7 @@ router.get('/', (req, res) => {
     });
 });
 
-// gets one user by id
+// will grab one user by the id
 router.get('/:id', (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
@@ -27,7 +25,6 @@ router.get('/:id', (req, res) => {
             model: Post,
             attributes: ['id', 'title', 'content', 'created_at']
           },
-          // include the Comment model here:
           {
             model: Comment,
             attributes: ['id', 'text', 'created_at'],
@@ -53,7 +50,7 @@ router.get('/:id', (req, res) => {
 
 });
 
-// adds a user
+// This section will add a user
 router.post('/', (req, res) => {
   console.log(req.body)
     // expects {username: 'Prestonw15', email: 'prestonwatson.15@gmail.com', 'password: 'password1234'}
@@ -105,7 +102,6 @@ router.post('/login', (req, res) => {
       
     });
   });
-// PUT /api/users/1
 router.put('/:id', (req, res) => {
     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   
@@ -128,7 +124,7 @@ router.put('/:id', (req, res) => {
         res.status(500).json(err);
       });
   });
-// deletes a user
+// this will delete a user
 router.delete('/:id', (req, res) => {
     User.destroy({
         where: {
@@ -148,7 +144,7 @@ router.delete('/:id', (req, res) => {
     });
 });
 
-//logout
+//logs you out of the application
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

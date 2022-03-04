@@ -1,4 +1,4 @@
-async function newFormHandler(event) {
+async function newForm(event) {
     event.preventDefault();
   
     const title = document.querySelector('input[name="post-title"]').value;
@@ -22,4 +22,4 @@ async function newFormHandler(event) {
     }
   }
   
-  document.querySelector('.new-post').addEventListener('submit', newFormHandler);
+  document.querySelector('.new-post').addEventListener('submit', newForm);

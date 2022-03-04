@@ -46,4 +46,13 @@ a {
     background-color: #30475e;
 }
 
-
+.signup-form {
+    justify-content: center;
+    background-color: purple;
+    color: gold;
+}
+.login-form {
+    justify-content: center;
+    background-color: purple;
+    color: gold;
+}
