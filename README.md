@@ -20,5 +20,6 @@ First you'll want to make sure you're in the repo in your terminal. Then you wil
   <li>sequelize</li>
 </ul>
 After these are installed create a acccount using the sign up and you're all set to start blogging.
+
 # Author
 IF you have any questions please email: prestonwatson.15@gmail.com
