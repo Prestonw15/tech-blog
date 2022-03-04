@@ -43,7 +43,7 @@ a {
 }
 
 .meta {
-    background-color: #30475e;
+    background-color: purple;
 }
 
 .signup-form {
@@ -58,5 +58,10 @@ a {
 }
 
 a :hover {
+    color: gold;
+}
+
+.comments {
+    background-color: purple;
     color: gold;
 }
