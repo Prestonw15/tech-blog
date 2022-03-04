@@ -56,3 +56,7 @@ a {
     background-color: purple;
     color: gold;
 }
+
+a :hover {
+    color: gold;
+}
