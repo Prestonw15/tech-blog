@@ -74,8 +74,6 @@ router.get('/login', (req, res) => {
 // route for session/cookies
 router.get('/', (req, res) => {
     console.log(req.session);
-
-    // other logic...
 });
 
 //route for single post page
