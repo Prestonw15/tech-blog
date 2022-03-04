@@ -72,7 +72,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// create a post
+// This will create the post 
 router.post('/', Auth, (req, res) => {
     // expects {title: 'This is the title', content: 'This is the content', user_id: 1}
     Post.create({
@@ -87,7 +87,7 @@ router.post('/', Auth, (req, res) => {
     });
 });
 
-// update a posts title
+// updates the posts title
 router.put('/:id', Auth, (req, res) => {
     Post.update({
         title: req.body.title,
@@ -111,7 +111,7 @@ router.put('/:id', Auth, (req, res) => {
     });
 });
 
-// delete a post
+// This will allow you to delete a post if you'd like
 router.delete('/:id', Auth, (req, res) => {
     console.log(req.params.id, '-------------------');
     Post.destroy({
