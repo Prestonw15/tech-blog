@@ -6,8 +6,7 @@ In this repo I created a tech blog that will allow you to signup, login and logo
 
 # Demo Video Link
 
-![2022-03-05](https://user-images.githubusercontent.com/90294449/156899150-9b49ccf2-190e-4982-a628-49b4519aa117.png)
-
+![2022-03-04](https://user-images.githubusercontent.com/90294449/156899162-7c177b7a-b98b-47aa-b00e-e1ebfa8c253a.png)
 
 # Installation and packages used
 First you'll want to make sure you're in the repo in your terminal. Then you will install the following packages using npm:
